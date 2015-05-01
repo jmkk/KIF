@@ -335,11 +335,19 @@ static inline KIFDisplacement KIFDisplacementForSwipingInDirection(KIFSwipeDirec
 - (void)selectPickerViewRowWithTitle:(NSString *)title inComponent:(NSInteger)component;
 
 /*!
+ @abstract Selects value(s) from a currently visible picker view.
+ @discussion With a picker view already visible, this step will select the different rotating weel values in order of how the array parameter is passed in. After it is done it will hide the picker. The input parameter of type NSArray has to match in what order the date picker is displaying the values/columns. So if the locale is changing the input parameter has to be adjusted. Example: Mode: UIDatePickerModeDate, Locale: en_US, Input param: NSArray *date = @[@"June", @"17", @"1965"];. Example: Mode: UIDatePickerModeDate, Locale: de_DE, Input param: NSArray *date = @[@"17.", @"Juni", @"1965".
+ @param pickerColumnValues Each element in the NSArray represents a rotating wheel in the picker control. Elements from 0 - n are listed in the order of the rotating wheels, left to right.
+ @param pickerType The picker type to select values in.
+ */
+- (void)selectPickerValue:(NSArray*)pickerColumnValues pickerType:(KIFPickerType)pickerType;
+
+/*!
  @abstract Selects a value from a currently visible date picker view.
  @discussion With a date picker view already visible, this step will select the different rotating weel values in order of how the array parameter is passed in. After it is done it will hide the date picker. It works with all 4 UIDatePickerMode* modes. The input parameter of type NSArray has to match in what order the date picker is displaying the values/columns. So if the locale is changing the input parameter has to be adjusted. Example: Mode: UIDatePickerModeDate, Locale: en_US, Input param: NSArray *date = @[@"June", @"17", @"1965"];. Example: Mode: UIDatePickerModeDate, Locale: de_DE, Input param: NSArray *date = @[@"17.", @"Juni", @"1965".
  @param datePickerColumnValues Each element in the NSArray represents a rotating wheel in the date picker control. Elements from 0 - n are listed in the order of the rotating wheels, left to right.
  */
-- (void) selectDatePickerValue:(NSArray*)datePickerColumnValues;
+- (void)selectDatePickerValue:(NSArray*)datePickerColumnValues;
 
 /*!
  @abstract Toggles a UISwitch into a specified position.
@@ -348,6 +356,7 @@ static inline KIFDisplacement KIFDisplacementForSwipingInDirection(KIFSwipeDirec
  @param label The accessibility label of the element to switch.
  */
 - (void)setOn:(BOOL)switchIsOn forSwitchWithAccessibilityLabel:(NSString *)label;
+- (void)setOn:(BOOL)switchIsOn forAccessibilityElement:(UIAccessibilityElement *)element inSwitch:(UISwitch *)view;
 
 /*!
  @abstract Slides a UISlider to a specified value.
@@ -466,6 +475,8 @@ static inline KIFDisplacement KIFDisplacementForSwipingInDirection(KIFSwipeDirec
  @param verticalFraction The vertical displacement of the scroll action, as a fraction of the height of the view.
  */
 - (void)scrollViewWithAccessibilityIdentifier:(NSString *)identifier byFractionOfSizeHorizontal:(CGFloat)horizontalFraction vertical:(CGFloat)verticalFraction NS_AVAILABLE_IOS(5_0);
+
+- (void)scrollAccessibilityElement:(UIAccessibilityElement *)element inView:(UIView *)viewToScroll byFractionOfSizeHorizontal:(CGFloat)horizontalFraction vertical:(CGFloat)verticalFraction;
 
 /*!
  @abstract Waits until a view or accessibility element is the first responder.

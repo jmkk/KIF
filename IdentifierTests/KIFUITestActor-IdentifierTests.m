@@ -133,28 +133,7 @@
 	
 	UISwitch *switchView = (UISwitch *)view;
 	
-	// No need to switch it if it's already in the correct position
-	if (switchView.isOn == switchIsOn) {
-		return;
-	}
-	
-	[self tapAccessibilityElement:element inView:view];
-	
-	// If we succeeded, stop the test.
-	if (switchView.isOn == switchIsOn) {
-		return;
-	}
-	
-	NSLog(@"Faking turning switch %@ with accessibility identifier %@", switchIsOn ? @"ON" : @"OFF", accessibilityIdentifier);
-	[switchView setOn:switchIsOn animated:YES];
-	[switchView sendActionsForControlEvents:UIControlEventValueChanged];
-	[self waitForTimeInterval:0.5];
-	
-	// We gave it our best shot.  Fail the test.
-	if (switchView.isOn != switchIsOn) {
-		[self failWithError:[NSError KIFErrorWithFormat:@"Failed to toggle switch to \"%@\"; instead, it was \"%@\"", switchIsOn ? @"ON" : @"OFF", switchView.on ? @"ON" : @"OFF"] stopTest:YES];
-	}
-	
+    [self setOn:switchIsOn forAccessibilityElement:element inSwitch:switchView];
 }
 
 - (void)setValue:(float)value forSliderWithAccessibilityIdentifier:(NSString *)accessibilityIdentifier

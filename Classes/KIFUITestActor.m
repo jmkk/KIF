@@ -455,7 +455,8 @@
     [self enterTextIntoCurrentFirstResponder:text];
 }
 
-- (void) selectDatePickerValue:(NSArray*)datePickerColumnValues {
+- (void)selectDatePickerValue:(NSArray*)datePickerColumnValues
+{
     [self selectPickerValue:datePickerColumnValues pickerType:KIFUIDatePicker];
 }
 
@@ -512,8 +513,8 @@
     [self selectPickerValue:dataToSelect pickerType:pickerType];
 }
 
-- (void) selectPickerValue:(NSArray*)pickerColumnValues pickerType:(KIFPickerType)pickerType {
-    
+- (void)selectPickerValue:(NSArray*)pickerColumnValues pickerType:(KIFPickerType)pickerType
+{
     [self runBlock:^KIFTestStepResult(NSError **error) {
         NSInteger columnCount = [pickerColumnValues count];
         NSMutableArray* found_values = [NSMutableArray arrayWithCapacity:columnCount];
@@ -614,19 +615,27 @@
     
     UISwitch *switchView = (UISwitch *)view;
     
+    [self setOn:switchIsOn forAccessibilityElement:element inSwitch:switchView];
+}
+
+- (void)setOn:(BOOL)switchIsOn forAccessibilityElement:(UIAccessibilityElement *)element inSwitch:(UISwitch *)switchView
+{
+    NSString *label = switchView.accessibilityLabel;
+    NSString *identifier = switchView.accessibilityIdentifier;
+    
     // No need to switch it if it's already in the correct position
     if (switchView.isOn == switchIsOn) {
         return;
     }
     
-    [self tapAccessibilityElement:element inView:view];
+    [self tapAccessibilityElement:element inView:switchView];
     
     // If we succeeded, stop the test.
     if (switchView.isOn == switchIsOn) {
         return;
     }
     
-    NSLog(@"Faking turning switch %@ with accessibility label %@", switchIsOn ? @"ON" : @"OFF", label);
+    NSLog(@"Faking turning switch %@ with accessibility label %@ (accessibility identifier %@)", switchIsOn ? @"ON" : @"OFF", label, identifier);
     [switchView setOn:switchIsOn animated:YES];
     [switchView sendActionsForControlEvents:UIControlEventValueChanged];
     [self waitForTimeInterval:0.5];
@@ -636,8 +645,6 @@
         [self failWithError:[NSError KIFErrorWithFormat:@"Failed to toggle switch to \"%@\"; instead, it was \"%@\"", switchIsOn ? @"ON" : @"OFF", switchView.on ? @"ON" : @"OFF"] stopTest:YES];
     }
 }
-
-
 
 - (void)setValue:(float)value forSliderWithAccessibilityLabel:(NSString *)label
 {
@@ -1022,7 +1029,11 @@
 {
     UITableView *tableView;
     [self waitForAccessibilityElement:NULL view:&tableView withIdentifier:identifier tappable:NO];
-    
+    [self moveRowAtIndexPath:sourceIndexPath toIndexPath:destinationIndexPath inTableView:tableView];
+}
+
+- (void)moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath inTableView:(UITableView *)tableView
+{
     UITableViewCell *cell = [self waitForCellAtIndexPath:sourceIndexPath inTableView:tableView];
     
     NSError *error = nil;
