@@ -83,6 +83,11 @@ typedef void (^KIFTestCompletionBlock)(KIFTestStepResult result, NSError *error)
 
 @interface KIFTestActor : NSObject
 
++ (float)speed;
++ (void)setSpeed:(float)speed;
++ (BOOL)animation;
++ (void)setAnimation:(BOOL)animation;
+
 + (instancetype)actorInFile:(NSString *)file atLine:(NSInteger)line delegate:(id<KIFTestActorDelegate>)delegate;
 
 @property (strong, nonatomic, readonly) NSString *file;
