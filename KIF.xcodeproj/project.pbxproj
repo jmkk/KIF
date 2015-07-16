@@ -13,21 +13,30 @@
 		2EE12711198991920031D347 /* MultiFingerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EE1270F198991920031D347 /* MultiFingerTests.m */; };
 		3812FB611A1212A700335733 /* AnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3812FB601A1212A700335733 /* AnimationViewController.m */; };
 		3812FB631A12188700335733 /* WaitForAnimationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3812FB621A12188700335733 /* WaitForAnimationTests.m */; };
+		3ADD2532FE4917CD5755AA59 /* UIView-Debugging.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ADD26484C6C438B71DC15C5 /* UIView-Debugging.h */; };
+		3ADD25CC71BF27D675768787 /* UIView-Debugging.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ADD26484C6C438B71DC15C5 /* UIView-Debugging.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4A48107B19708CAB0003A32E /* ExistTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A48107A19708CAB0003A32E /* ExistTests.m */; };
+		4D2FD4EE1AF5936700E61192 /* UIView-Debugging.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADD2160096BE41C780FBD95 /* UIView-Debugging.m */; };
+		4D2FD4EF1AF5936800E61192 /* UIView-Debugging.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADD2160096BE41C780FBD95 /* UIView-Debugging.m */; };
+		5C877DD01B057E13006A3AC6 /* KIFUITestActor-IdentifierTests.h in Headers */ = {isa = PBXBuildFile; fileRef = EB1A44D31A0C3268004A3F61 /* KIFUITestActor-IdentifierTests.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5C877DD11B0A8B8F006A3AC6 /* UIView-Debugging.h in Headers */ = {isa = PBXBuildFile; fileRef = 3ADD26484C6C438B71DC15C5 /* UIView-Debugging.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5C877DD21B0A8B93006A3AC6 /* UIView-Debugging.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADD2160096BE41C780FBD95 /* UIView-Debugging.m */; };
 		84D293AD1A2C84F700C10944 /* SystemAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D293AC1A2C84F700C10944 /* SystemAlertViewController.m */; };
 		84D293AF1A2C867300C10944 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D293AE1A2C867300C10944 /* CoreLocation.framework */; };
 		84D293B11A2C891700C10944 /* SystemAlertTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D293B01A2C891700C10944 /* SystemAlertTests.m */; };
 		84D293B81A2C8DF700C10944 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D293B71A2C8DF700C10944 /* AddressBookUI.framework */; };
-		84D293BB1A2CC30B00C10944 /* UIAutomationHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 84D293B91A2CC30B00C10944 /* UIAutomationHelper.h */; };
+		84D293BB1A2CC30B00C10944 /* UIAutomationHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 84D293B91A2CC30B00C10944 /* UIAutomationHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84D293BC1A2CC30B00C10944 /* UIAutomationHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 84D293B91A2CC30B00C10944 /* UIAutomationHelper.h */; };
 		84D293BD1A2CC30B00C10944 /* UIAutomationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D293BA1A2CC30B00C10944 /* UIAutomationHelper.m */; };
 		84D293BE1A2CC30B00C10944 /* UIAutomationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D293BA1A2CC30B00C10944 /* UIAutomationHelper.m */; };
+		97E8A5CF1B0A62F700124E3B /* BackgroundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E8A5CE1B0A62F700124E3B /* BackgroundViewController.m */; };
+		97E8A5D11B0A63D100124E3B /* BackgroundTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E8A5D01B0A63D100124E3B /* BackgroundTests.m */; };
 		9CC881A91AD4CE39002CD34C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAB072B413971AEA008AF393 /* UIKit.framework */; };
 		9CC881AA1AD4CE45002CD34C /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9AD81F91AA180B900B369FD /* IOKit.framework */; };
 		9CC881AB1AD4CE47002CD34C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EABD46AB1857A0EB00A5F081 /* XCTest.framework */; };
 		9CC881AC1AD4CE4B002CD34C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAB0726B139719AC008AF393 /* Foundation.framework */; };
 		9CC881AD1AD4CE50002CD34C /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CC881A21AD4CAAC002CD34C /* CoreFoundation.framework */; };
-		9CC967401AD4B1B600576D13 /* KIFFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CC9673F1AD4B1B600576D13 /* KIFFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9CC967401AD4B1B600576D13 /* KIF.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CC9673F1AD4B1B600576D13 /* KIF.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CC967561AD4B1F100576D13 /* LoadableCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 39160B1013D1E6BB00311E38 /* LoadableCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CC967571AD4B1F100576D13 /* CGGeometry-KIFAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = AAB0729413971AB2008AF393 /* CGGeometry-KIFAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CC967591AD4B1F100576D13 /* NSFileManager-KIFAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = CDFD8E84139728B4008D299F /* NSFileManager-KIFAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -46,7 +55,6 @@
 		9CC967731AD4B1FF00576D13 /* KIFSystemTestActor.h in Headers */ = {isa = PBXBuildFile; fileRef = EB4C3130167BA3AC00E31109 /* KIFSystemTestActor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CC967751AD4B1FF00576D13 /* KIFUITestActor.h in Headers */ = {isa = PBXBuildFile; fileRef = EB4C3132167BA3AC00E31109 /* KIFUITestActor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CC967771AD4B1FF00576D13 /* KIFUITestActor-ConditionalTests.h in Headers */ = {isa = PBXBuildFile; fileRef = EB2526461981BF7A00DBC747 /* KIFUITestActor-ConditionalTests.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9CC967791AD4B20700576D13 /* KIF.h in Headers */ = {isa = PBXBuildFile; fileRef = A88930111685098E00FC7C63 /* KIF.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CC9677A1AD4B20700576D13 /* KIFTestCase.h in Headers */ = {isa = PBXBuildFile; fileRef = EB4C3127167BA37B00E31109 /* KIFTestCase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CC9677C1AD4B20700576D13 /* KIFTestActor.h in Headers */ = {isa = PBXBuildFile; fileRef = EB4C3123167BA37B00E31109 /* KIFTestActor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CC9677F1AD4B20700576D13 /* KIFTypist.h in Headers */ = {isa = PBXBuildFile; fileRef = C194255615D83DE9004FC314 /* KIFTypist.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -88,7 +96,7 @@
 		D927B9E218F9E47600DAD036 /* UITableView-KIFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D927B9DE18F9E46400DAD036 /* UITableView-KIFAdditions.m */; };
 		D9EA274118F05A6000D87E57 /* ScrollViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D9EA274018F05A6000D87E57 /* ScrollViewTests.m */; };
 		D9EA274318F05A6700D87E57 /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9EA274218F05A6700D87E57 /* ScrollViewController.m */; };
-		E977D1071AA4062B005645BF /* UIEvent+KIFAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E977D1051AA4062B005645BF /* UIEvent+KIFAdditions.h */; };
+		E977D1071AA4062B005645BF /* UIEvent+KIFAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E977D1051AA4062B005645BF /* UIEvent+KIFAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E977D1081AA4062B005645BF /* UIEvent+KIFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E977D1061AA4062B005645BF /* UIEvent+KIFAdditions.m */; };
 		E977D1091AA40736005645BF /* UIEvent+KIFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E977D1061AA4062B005645BF /* UIEvent+KIFAdditions.m */; };
 		E9AD81FA1AA180B900B369FD /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9AD81F91AA180B900B369FD /* IOKit.framework */; };
@@ -267,6 +275,8 @@
 		3812FB601A1212A700335733 /* AnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationViewController.m; sourceTree = "<group>"; };
 		3812FB621A12188700335733 /* WaitForAnimationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaitForAnimationTests.m; sourceTree = "<group>"; };
 		39160B1013D1E6BB00311E38 /* LoadableCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadableCategory.h; sourceTree = "<group>"; };
+		3ADD2160096BE41C780FBD95 /* UIView-Debugging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView-Debugging.m"; sourceTree = "<group>"; };
+		3ADD26484C6C438B71DC15C5 /* UIView-Debugging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView-Debugging.h"; sourceTree = "<group>"; };
 		4A48107A19708CAB0003A32E /* ExistTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExistTests.m; sourceTree = "<group>"; };
 		84D293AC1A2C84F700C10944 /* SystemAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemAlertViewController.m; sourceTree = "<group>"; };
 		84D293AE1A2C867300C10944 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -274,10 +284,12 @@
 		84D293B71A2C8DF700C10944 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		84D293B91A2CC30B00C10944 /* UIAutomationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIAutomationHelper.h; sourceTree = "<group>"; };
 		84D293BA1A2CC30B00C10944 /* UIAutomationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIAutomationHelper.m; sourceTree = "<group>"; };
+		97E8A5CE1B0A62F700124E3B /* BackgroundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundViewController.m; sourceTree = "<group>"; };
+		97E8A5D01B0A63D100124E3B /* BackgroundTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundTests.m; sourceTree = "<group>"; };
 		9CC881A21AD4CAAC002CD34C /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
-		9CC9673B1AD4B1B600576D13 /* KIFFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KIFFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CC9673B1AD4B1B600576D13 /* KIF.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KIF.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CC9673E1AD4B1B600576D13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9CC9673F1AD4B1B600576D13 /* KIFFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KIFFramework.h; sourceTree = "<group>"; };
+		9CC9673F1AD4B1B600576D13 /* KIF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KIF.h; sourceTree = "<group>"; };
 		A88930111685098E00FC7C63 /* KIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = KIF.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		AAB0726B139719AC008AF393 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AAB0728113971A63008AF393 /* KIF-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "KIF-Prefix.pch"; path = "Classes/KIF-Prefix.pch"; sourceTree = SOURCE_ROOT; };
@@ -460,7 +472,7 @@
 		9CC9673C1AD4B1B600576D13 /* KIF Framework */ = {
 			isa = PBXGroup;
 			children = (
-				9CC9673F1AD4B1B600576D13 /* KIFFramework.h */,
+				9CC9673F1AD4B1B600576D13 /* KIF.h */,
 				9CC9673D1AD4B1B600576D13 /* Supporting Files */,
 			);
 			name = "KIF Framework";
@@ -495,7 +507,7 @@
 				EB60ECEB177F8DB3005A041A /* KIF Tests-OCUnit.octest */,
 				EABD46AA1857A0C700A5F081 /* libKIF.a */,
 				EABD46CD1857A0F300A5F081 /* KIF Tests - XCTest.xctest */,
-				9CC9673B1AD4B1B600576D13 /* KIFFramework.framework */,
+				9CC9673B1AD4B1B600576D13 /* KIF.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -580,6 +592,8 @@
 				EAC809691864F19C000E819F /* NSException-KIFAdditions.m */,
 				E977D1051AA4062B005645BF /* UIEvent+KIFAdditions.h */,
 				E977D1061AA4062B005645BF /* UIEvent+KIFAdditions.m */,
+				3ADD2160096BE41C780FBD95 /* UIView-Debugging.m */,
+				3ADD26484C6C438B71DC15C5 /* UIView-Debugging.h */,
 			);
 			path = Additions;
 			sourceTree = "<group>";
@@ -633,6 +647,7 @@
 				D927B9DB18F9DF2D00DAD036 /* TableViewController.m */,
 				AE62FCD51A1D2447002B10DA /* WebViewController.m */,
 				84D293AC1A2C84F700C10944 /* SystemAlertViewController.m */,
+				97E8A5CE1B0A62F700124E3B /* BackgroundViewController.m */,
 				EB60ECC7177F8C83005A041A /* Supporting Files */,
 			);
 			path = "Test Host";
@@ -681,6 +696,7 @@
 				EB1A44D91A0C33AD004A3F61 /* AccessibilityIdentifierTests.m */,
 				AE62FCCF1A1D20E5002B10DA /* WebViewTests.m */,
 				84D293B01A2C891700C10944 /* SystemAlertTests.m */,
+				97E8A5D01B0A63D100124E3B /* BackgroundTests.m */,
 				EB60ECF0177F8DB3005A041A /* Supporting Files */,
 			);
 			path = "KIF Tests";
@@ -704,7 +720,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CC967401AD4B1B600576D13 /* KIFFramework.h in Headers */,
+				9CC967401AD4B1B600576D13 /* KIF.h in Headers */,
 				9CC967561AD4B1F100576D13 /* LoadableCategory.h in Headers */,
 				9CC967571AD4B1F100576D13 /* CGGeometry-KIFAdditions.h in Headers */,
 				9CC967591AD4B1F100576D13 /* NSFileManager-KIFAdditions.h in Headers */,
@@ -712,8 +728,8 @@
 				9CC9675D1AD4B1F100576D13 /* UIApplication-KIFAdditions.h in Headers */,
 				9CC9675F1AD4B1F100576D13 /* UIScrollView-KIFAdditions.h in Headers */,
 				9CC967731AD4B1FF00576D13 /* KIFSystemTestActor.h in Headers */,
-				9CC967791AD4B20700576D13 /* KIF.h in Headers */,
 				9CC9677A1AD4B20700576D13 /* KIFTestCase.h in Headers */,
+				5C877DD01B057E13006A3AC6 /* KIFUITestActor-IdentifierTests.h in Headers */,
 				9CC9677C1AD4B20700576D13 /* KIFTestActor.h in Headers */,
 				9CC9677F1AD4B20700576D13 /* KIFTypist.h in Headers */,
 				9CC967811AD4B20700576D13 /* KIFTestStepValidation.h in Headers */,
@@ -724,6 +740,7 @@
 				9CC967651AD4B1F100576D13 /* UIWindow-KIFAdditions.h in Headers */,
 				9CC967671AD4B1F100576D13 /* UITableView-KIFAdditions.h in Headers */,
 				9CC967691AD4B1F100576D13 /* NSBundle-KIFAdditions.h in Headers */,
+				5C877DD11B0A8B8F006A3AC6 /* UIView-Debugging.h in Headers */,
 				9CC9676B1AD4B1F100576D13 /* NSError-KIFAdditions.h in Headers */,
 				9CC9676D1AD4B1F100576D13 /* XCTestCase-KIFAdditions.h in Headers */,
 				9CC9676F1AD4B1F100576D13 /* NSException-KIFAdditions.h in Headers */,
@@ -743,7 +760,6 @@
 				EABD46931857A0C700A5F081 /* UIAccessibilityElement-KIFAdditions.h in Headers */,
 				9CC967BE1AD4B55E00576D13 /* KIF-XCTestPrefix.pch in Headers */,
 				EABD46941857A0C700A5F081 /* UIApplication-KIFAdditions.h in Headers */,
-				84D293BB1A2CC30B00C10944 /* UIAutomationHelper.h in Headers */,
 				EABD46951857A0C700A5F081 /* UIScrollView-KIFAdditions.h in Headers */,
 				EABD46971857A0C700A5F081 /* UITouch-KIFAdditions.h in Headers */,
 				EABD46981857A0C700A5F081 /* UIView-KIFAdditions.h in Headers */,
@@ -755,12 +771,14 @@
 				EABD469E1857A0C700A5F081 /* KIFTestCase.h in Headers */,
 				EABD469F1857A0C700A5F081 /* KIFSystemTestActor.h in Headers */,
 				EABD46A01857A0C700A5F081 /* KIFUITestActor.h in Headers */,
-				E977D1071AA4062B005645BF /* UIEvent+KIFAdditions.h in Headers */,
 				EABD46A11857A0C700A5F081 /* NSBundle-KIFAdditions.h in Headers */,
 				EAC8096A1864F19C000E819F /* NSException-KIFAdditions.h in Headers */,
 				EABD46961857A0C700A5F081 /* XCTestCase-KIFAdditions.h in Headers */,
+				84D293BB1A2CC30B00C10944 /* UIAutomationHelper.h in Headers */,
+				E977D1071AA4062B005645BF /* UIEvent+KIFAdditions.h in Headers */,
 				EABD46A21857A0C700A5F081 /* NSError-KIFAdditions.h in Headers */,
 				EABD46A31857A0C700A5F081 /* KIFTestStepValidation.h in Headers */,
+				3ADD25CC71BF27D675768787 /* UIView-Debugging.h in Headers */,
 				EB2526481981BF7A00DBC747 /* KIFUITestActor-ConditionalTests.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -792,6 +810,7 @@
 				EABD474B185F509E00A5F081 /* SenTestCase-KIFAdditions.h in Headers */,
 				EBAE488717A4E5C30005EE19 /* KIFTestStepValidation.h in Headers */,
 				EB7204551680DDAD00278DA2 /* KIF-Prefix.pch in Headers */,
+				3ADD2532FE4917CD5755AA59 /* UIView-Debugging.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -830,7 +849,7 @@
 			);
 			name = KIFFramework;
 			productName = KIFFramework;
-			productReference = 9CC9673B1AD4B1B600576D13 /* KIFFramework.framework */;
+			productReference = 9CC9673B1AD4B1B600576D13 /* KIF.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		EABD46791857A0C700A5F081 /* KIF */ = {
@@ -1056,6 +1075,7 @@
 				9CC967CA1AD4B58C00576D13 /* XCTestCase-KIFAdditions.m in Sources */,
 				9CC967CB1AD4B58C00576D13 /* NSException-KIFAdditions.m in Sources */,
 				9CC967CC1AD4B58C00576D13 /* UIEvent+KIFAdditions.m in Sources */,
+				5C877DD21B0A8B93006A3AC6 /* UIView-Debugging.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1086,6 +1106,7 @@
 				EABD46891857A0C700A5F081 /* NSBundle-KIFAdditions.m in Sources */,
 				EABD468A1857A0C700A5F081 /* NSError-KIFAdditions.m in Sources */,
 				EABD468B1857A0C700A5F081 /* KIFTestStepValidation.m in Sources */,
+				4D2FD4EE1AF5936700E61192 /* UIView-Debugging.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1110,6 +1131,7 @@
 				EA47DA2818EDFD6F0034D2F5 /* CollectionViewTests.m in Sources */,
 				EABD46BB1857A0F300A5F081 /* WaitForTappableViewTests.m in Sources */,
 				EABD46BC1857A0F300A5F081 /* WaitForViewTests.m in Sources */,
+				97E8A5D11B0A63D100124E3B /* BackgroundTests.m in Sources */,
 				EABD46BD1857A0F300A5F081 /* LandscapeTests.m in Sources */,
 				EABD46BE1857A0F300A5F081 /* TableViewTests.m in Sources */,
 				EABD46BF1857A0F300A5F081 /* GestureTests.m in Sources */,
@@ -1124,6 +1146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97E8A5CF1B0A62F700124E3B /* BackgroundViewController.m in Sources */,
 				EB9FB42717A5BACB00DDF160 /* GestureViewController.m in Sources */,
 				EA0F254A1829839E006FF825 /* CollectionViewController.m in Sources */,
 				84D293AD1A2C84F700C10944 /* SystemAlertViewController.m in Sources */,
@@ -1191,6 +1214,7 @@
 				EBAE488817A4E5C30005EE19 /* KIFTestStepValidation.m in Sources */,
 				EABD474C185F509E00A5F081 /* SenTestCase-KIFAdditions.m in Sources */,
 				E977D1091AA40736005645BF /* UIEvent+KIFAdditions.m in Sources */,
+				4D2FD4EF1AF5936800E61192 /* UIView-Debugging.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1288,7 +1312,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = KIF;
 				PUBLIC_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Headers";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1343,7 +1367,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = KIF;
 				PUBLIC_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Headers";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1399,7 +1423,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = KIF;
 				PUBLIC_HEADERS_FOLDER_PATH = "$(CONTENTS_FOLDER_PATH)/Headers";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
