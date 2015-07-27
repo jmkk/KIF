@@ -650,7 +650,7 @@
     }
     
     NSLog(@"Faking turning switch %@ with accessibility label %@ (accessibility identifier %@)", switchIsOn ? @"ON" : @"OFF", label, identifier);
-    [switchView setOn:switchIsOn animated:YES];
+    [switchView setOn:switchIsOn animated:[KIFTestActor animation]];
     [switchView sendActionsForControlEvents:UIControlEventValueChanged];
     [self waitForTimeInterval:0.5];
     
@@ -775,7 +775,7 @@
 
 - (void)swipeRowAtIndexPath:(NSIndexPath *)indexPath inTableView:(UITableView *)tableView inDirection:(KIFSwipeDirection)direction
 {
-    const NSUInteger kNumberOfPointsInSwipePath = 20;
+    const NSUInteger kNumberOfPointsInSwipePath = MAX(5, (int)(20 / [KIFTestActor speed]));
     
     UITableViewCell *cell = [self waitForCellAtIndexPath:indexPath inTableView:tableView];
     CGRect cellFrame = [cell.contentView convertRect:cell.contentView.frame toView:tableView];
@@ -943,7 +943,7 @@
     __block UITableViewCell *cell = nil;
     __block CGFloat lastYOffset = CGFLOAT_MAX;
     [self runBlock:^KIFTestStepResult(NSError **error) {
-        [tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+        [tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:[KIFTestActor animation]];
         cell = [tableView cellForRowAtIndexPath:indexPath];
         KIFTestWaitCondition(!!cell, error, @"Table view cell at index path %@ not found", indexPath);
         
@@ -1000,7 +1000,7 @@
 
     [collectionView scrollToItemAtIndexPath:indexPath
                            atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally | UICollectionViewScrollPositionCenteredVertically
-                                   animated:YES];
+                                   animated:[KIFTestActor animation]];
 
     [self waitForAnimationsToFinish];
     UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
@@ -1010,7 +1010,7 @@
         [collectionView layoutIfNeeded];
         [collectionView scrollToItemAtIndexPath:indexPath
                                atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally | UICollectionViewScrollPositionCenteredVertically
-                                       animated:YES];
+                                       animated:[KIFTestActor animation]];
         [self waitForAnimationsToFinish];
         cell = [collectionView cellForItemAtIndexPath:indexPath];
     }
