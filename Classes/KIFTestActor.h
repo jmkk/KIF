@@ -1,5 +1,5 @@
 //
-//  KIFTester.h
+//  KIFTestActor.h
 //  KIF
 //
 //  Created by Brian Nickel on 12/13/12.
@@ -50,7 +50,6 @@ if (error) { \
 return KIFTestStepResultWait; \
 } \
 })
-
 
 /*!
  @enum KIFTestStepResult
@@ -103,7 +102,6 @@ typedef void (^KIFTestCompletionBlock)(KIFTestStepResult result, NSError *error)
 - (void)runBlock:(KIFTestExecutionBlock)executionBlock timeout:(NSTimeInterval)timeout;
 - (void)runBlock:(KIFTestExecutionBlock)executionBlock;
 
-
 /*!
  @discussion Attempts to run the test block similar to -runBlock:complete:timeout: but does not halt the test on completion, instead returning NO on failure and providing an error description to the optional error parameter.
  */
@@ -155,6 +153,8 @@ typedef void (^KIFTestCompletionBlock)(KIFTestStepResult result, NSError *error)
 - (void)fail;
 
 - (void)failWithError:(NSError *)error stopTest:(BOOL)stopTest;
+
+- (void)failWithMessage:(NSString *)message, ...;
 
 /*!
  @abstract Waits for a certain amount of time before returning.

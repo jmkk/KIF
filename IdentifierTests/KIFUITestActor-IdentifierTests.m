@@ -36,29 +36,8 @@
 
 - (void)waitForAbsenceOfViewWithAccessibilityIdentifier:(NSString *)accessibilityIdentifier
 {
-    [self runBlock:^KIFTestStepResult(NSError **error) {
-        // If the app is ignoring interaction events, then wait before doing our analysis
-        KIFTestWaitCondition(![[UIApplication sharedApplication] isIgnoringInteractionEvents], error, @"Application is ignoring interaction events.");
-        
-        // If the element can't be found, then we're done
-        
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"accessibilityIdentifier = %@", accessibilityIdentifier];
-        UIAccessibilityElement *element = nil;
-        
-        if (![UIAccessibilityElement accessibilityElement:&element view:NULL withElementMatchingPredicate:predicate tappable:NO error:NULL]) {
-            return KIFTestStepResultSuccess;
-        }
-        
-        UIView *view = [UIAccessibilityElement viewContainingAccessibilityElement:element];
-        
-        // If we found an element, but it's not associated with a view, then something's wrong. Wait it out and try again.
-        KIFTestWaitCondition(view, error, @"Cannot find view containing accessibility element with the identifier \"%@\"", accessibilityIdentifier);
-        
-        // Hidden views count as absent
-        KIFTestWaitCondition([view isHidden] || [view superview] == nil, error, @"Accessibility element with identifier \"%@\" is visible and not hidden.", accessibilityIdentifier);
-        
-        return KIFTestStepResultSuccess;
-    }];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"accessibilityIdentifier = %@", accessibilityIdentifier];
+    [self waitForAbsenceOfViewWithElementMatchingPredicate:predicate];
 }
 
 - (UIView *)waitForViewWithAccessibilityIdentifier:(NSString *)accessibilityIdentifier tappable:(BOOL)mustBeTappable
@@ -133,7 +112,28 @@
 	
 	UISwitch *switchView = (UISwitch *)view;
 	
-    [self setOn:switchIsOn forAccessibilityElement:element inSwitch:switchView];
+	// No need to switch it if it's already in the correct position
+	if (switchView.isOn == switchIsOn) {
+		return;
+	}
+	
+	[self tapAccessibilityElement:element inView:view];
+	
+	// If we succeeded, stop the test.
+	if (switchView.isOn == switchIsOn) {
+		return;
+	}
+	
+	NSLog(@"Faking turning switch %@ with accessibility identifier %@", switchIsOn ? @"ON" : @"OFF", accessibilityIdentifier);
+	[switchView setOn:switchIsOn animated:YES];
+	[switchView sendActionsForControlEvents:UIControlEventValueChanged];
+	[self waitForTimeInterval:0.5];
+	
+	// We gave it our best shot.  Fail the test.
+	if (switchView.isOn != switchIsOn) {
+		[self failWithError:[NSError KIFErrorWithFormat:@"Failed to toggle switch to \"%@\"; instead, it was \"%@\"", switchIsOn ? @"ON" : @"OFF", switchView.on ? @"ON" : @"OFF"] stopTest:YES];
+	}
+	
 }
 
 - (void)setValue:(float)value forSliderWithAccessibilityIdentifier:(NSString *)accessibilityIdentifier
@@ -189,6 +189,26 @@
     [self waitForAccessibilityElement: &element view:&viewToSwipe withIdentifier:identifier tappable:NO];
 
     [self swipeAccessibilityElement:element inView:viewToSwipe inDirection:direction];
+}
+
+- (void)pullToRefreshViewWithAccessibilityIdentifier:(NSString *)identifier
+{
+	UIView *viewToSwipe = nil;
+	UIAccessibilityElement *element = nil;
+
+	[self waitForAccessibilityElement: &element view:&viewToSwipe withIdentifier:identifier tappable:NO];
+
+	[self pullToRefreshAccessibilityElement:element inView:viewToSwipe pullDownDuration:0];
+}
+
+- (void)pullToRefreshViewWithAccessibilityIdentifier:(NSString *)identifier pullDownDuration:(KIFPullToRefreshTiming) pullDownDuration
+{
+	UIView *viewToSwipe = nil;
+	UIAccessibilityElement *element = nil;
+
+	[self waitForAccessibilityElement: &element view:&viewToSwipe withIdentifier:identifier tappable:NO];
+
+	[self pullToRefreshAccessibilityElement:element inView:viewToSwipe pullDownDuration:pullDownDuration];
 }
 
 -(void) tapStepperWithAccessibilityIdentifier: (NSString *)accessibilityIdentifier increment: (KIFStepperDirection) stepperDirection

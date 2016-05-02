@@ -286,7 +286,8 @@ NS_INLINE BOOL StringsMatchExceptLineBreaks(NSString *expected, NSString *actual
                     }
                     
                     // Scroll to the cell and wait for the animation to complete
-                    [collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
+                    CGRect frame = [collectionView.collectionViewLayout layoutAttributesForItemAtIndexPath:indexPath].frame;
+                    [collectionView scrollRectToVisible:frame animated:YES];
                     CFRunLoopRunInMode(UIApplicationCurrentRunMode, 0.5, false);
                     
                     // Now try finding the element again
@@ -449,7 +450,7 @@ NS_INLINE BOOL StringsMatchExceptLineBreaks(NSString *expected, NSString *actual
     [[UIApplication sharedApplication] sendEvent:event];
 }
 
-#define DRAG_TOUCH_DELAY 0.01
+#define DRAG_TOUCH_DELAY (0.01 / UIApplication.sharedApplication.keyWindow.layer.speed)
 
 - (void)longPressAtPoint:(CGPoint)point duration:(NSTimeInterval)duration
 {
@@ -826,6 +827,20 @@ NS_INLINE BOOL StringsMatchExceptLineBreaks(NSString *expected, NSString *actual
         }
         if (button && button.userInteractionEnabled) {
             isUserInteractionEnabled = YES;
+        }
+    }
+    
+    // Somtimes views are inside a UIControl and don't have user interaction enabled.
+    // Walk up the hierarchary evaluating the parent UIControl subclass and use that instead.
+    if (!isUserInteractionEnabled && [self.superview isKindOfClass:[UIControl class]]) {
+        // If this view is inside a UIControl, and it is enabled, then consider the view enabled
+        UIControl *control = (UIControl *)[self superview];
+        while (control && [control isKindOfClass:[UIControl class]]) {
+            if (control.isUserInteractionEnabled) {
+                isUserInteractionEnabled = YES;
+                break;
+            }
+            control = (UIControl *)[control superview];
         }
     }
     
