@@ -481,7 +481,7 @@ NS_INLINE BOOL StringsMatchExceptLineBreaks(NSString *expected, NSString *actual
     [[UIApplication sharedApplication] sendEvent:event];
 }
 
-#define DRAG_TOUCH_DELAY (0.01 / UIApplication.sharedApplication.keyWindow.layer.speed)
+#define DRAG_TOUCH_DELAY 0.01
 
 - (void)longPressAtPoint:(CGPoint)point duration:(NSTimeInterval)duration
 {

@@ -23,16 +23,7 @@
 
 @implementation KIFTestActor
 
-static float _speed = 1.0f;
 static BOOL _animation = YES;
-
-+ (float)speed {
-    return _speed;
-}
-
-+ (void)setSpeed:(float)speed {
-    _speed = speed;
-}
 
 + (BOOL)animation {
     return _animation;
@@ -223,14 +214,21 @@ static NSTimeInterval KIFTestStepDelay = 0.1;
 
 - (void)waitForTimeInterval:(NSTimeInterval)timeInterval
 {
-    timeInterval /= [KIFTestActor speed];
+    [self waitForTimeInterval:timeInterval relativeToAnimationSpeed:NO];
+}
 
+- (void)waitForTimeInterval:(NSTimeInterval)timeInterval relativeToAnimationSpeed:(BOOL)scaleTime
+{
+    if (scaleTime) {
+        timeInterval /= [UIApplication sharedApplication].animationSpeed;
+    }
+    
     NSTimeInterval startTime = [NSDate timeIntervalSinceReferenceDate];
     
     [self runBlock:^KIFTestStepResult(NSError **error) {
         KIFTestWaitCondition((([NSDate timeIntervalSinceReferenceDate] - startTime) >= timeInterval), error, @"Waiting for time interval to expire.");
         return KIFTestStepResultSuccess;
-    } timeout:timeInterval + 1 / [KIFTestActor speed] ];
+    } timeout:timeInterval + 1];
 }
 
 @end
